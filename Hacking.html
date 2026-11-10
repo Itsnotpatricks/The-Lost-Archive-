@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0d0900">
+
+  <title>The Lost Files — System Access</title>
+  <!--FONTS-->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="style.css">
+  
+  <link rel="icon" href="logo.png" type="img/logo">
+</head>
+
+<body>
+
+  <main class="gt-04 is-scanning" id="gt-04-root">
+
+    <!-- Matrix rain background -->
+    <div class="gt-04__rain" id="gt-04-rain"></div>
+
+    <!-- Authentication terminal -->
+    <div class="gt-04__terminal">
+
+      <span class="gt-04__prompt">
+        root@lostfiles:~$ authenticate --payload
+      </span>
+
+      <div>
+        <span class="gt-04__target" id="gt-04-text">
+          AUTHENTICATING
+        </span>
+        <span class="gt-04__cursor"></span>
+      </div>
+
+      <span class="gt-04__status" id="gt-04-status" aria-live="polite">
+        [ SCANNING... ]
+      </span>
+
+      <!-- Appears when access is granted -->
+      <button
+        type="button"
+        class="gt-04__server"
+        id="gt-04-server"
+        hidden
+      >
+        ▶ ACCESS SERVER
+      </button>
+
+      <!-- Replay authentication -->
+      <button
+        type="button"
+        class="gt-04__btn"
+        id="gt-04-btn"
+      >
+        ⟳ RE-RUN
+      </button>
+
+    </div>
+
+  </main>
+
+  <script src="hacking.js"></script>
+
+</body>
+</html>

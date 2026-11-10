@@ -1,0 +1,691 @@
+
+/* ========================================
+   THE LOST FILES — GLOBAL RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+body {
+    position: relative;
+    background: #0d0900;
+    color: #ffffff;
+    font-family: 'Courier New', monospace;
+}
+
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.homepage-header {
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    width: 100%;
+    height: 93px;
+
+    padding: 0 7.3% 0 2.5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+
+/* LOGO */
+
+.header {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+
+    font-family: "Oswald", sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.header span {
+    font-family: "Courier New", monospace;
+    font-size: 10px;
+    font-weight: 400;
+    color: #ccc;
+}
+
+.header span:hover{
+
+color: #f2ae11;
+
+
+
+}
+/* NAVIGATION */
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 110px;
+}
+
+.nav-menu a {
+    font-family: "Courier New", monospace;
+    font-size: 13px;
+    font-weight: 300;
+
+    color: #ccc;
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #f2ae11;
+}
+
+/* TABLET */
+
+@media (max-width: 768px) {
+
+    .homepage-header {
+        height: 85px;
+        padding: 0 25px;
+    }
+
+    .header {
+        font-size: 22px;
+    }
+
+    .nav-menu {
+        gap: 35px;
+    }
+}
+
+/* SMARTPHONE */
+
+@media (max-width: 480px) {
+
+    .homepage-header {
+        height: auto;
+        min-height: 90px;
+        padding: 20px;
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+    }
+
+    .nav-menu {
+        width: 100%;
+        justify-content: space-between;
+        gap: 15px;
+    }
+}
+
+
+
+
+/* ========================================
+   MAIN CONTAINER
+======================================== */
+
+.gt-04 {
+    --main: #ffb000;
+    --dim: #3b2a00;
+    --mid: #aa7600;
+    --glow: 255, 176, 0;
+    --bg: #0d0900;
+
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 24px;
+    padding: 24px;
+
+    background: var(--bg);
+
+    font-family: 'Courier New', 'Fira Code', monospace;
+
+    overflow: hidden;
+    isolation: isolate;
+
+    transition: background 0.4s;
+}
+
+.gt-04 ::selection {
+    background: var(--main);
+    color: #000;
+}
+
+/* ========================================
+   MATRIX RAIN BACKGROUND
+======================================== */
+
+.gt-04__rain {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+.gt-04__rain-col {
+    position: absolute;
+    top: -100%;
+
+    font-size: 12px;
+    color:#003b00;
+
+    line-height: 1.4;
+    white-space: pre;
+
+    opacity: 0.4;
+
+    animation: gt-04-rain-fall linear infinite;
+
+    transition: color 0.4s;
+}
+
+@keyframes gt-04-rain-fall {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(200%);
+    }
+}
+
+/* ========================================
+   TERMINAL WINDOW
+======================================== */
+
+.gt-04__terminal {
+    position: relative;
+    z-index: 2;
+
+    width: min(100%, 650px);
+    min-height: 190px;
+
+    padding: clamp(20px, 4vw, 36px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 10px;
+
+    background: rgba(0, 0, 0, 0.8);
+
+    border: 1px solid var(--dim);
+    border-radius: 6px;
+
+    box-shadow: 0 0 30px rgba(var(--glow), 0.12);
+
+    transition: border-color 0.4s, box-shadow 0.4s;
+}
+
+/* ========================================
+   TERMINAL PROMPT
+======================================== */
+
+.gt-04__prompt {
+    font-size: 11px;
+    color: var(--mid);
+    letter-spacing: 1px;
+}
+
+
+
+
+/* ========================================
+   MAIN SCRAMBLE TEXT
+======================================== */
+
+.gt-04__target {
+    display: inline-block;
+    position: relative;
+
+    width: 100%;
+    min-height: 1.2em;
+
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 700;
+
+    color: var(--main);
+
+    letter-spacing: 4px;
+
+    text-shadow:
+        0 0 10px var(--main),
+        0 0 30px rgba(var(--glow), 0.4);
+
+    overflow-wrap: anywhere;
+
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+/* ========================================
+   DENIED ANIMATION
+======================================== */
+
+.gt-04__target.fx-denied {
+    animation: gt-04-shake 0.4s ease-in-out;
+}
+
+@keyframes gt-04-shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-8px);
+    }
+
+    40% {
+        transform: translateX(8px);
+    }
+
+    60% {
+        transform: translateX(-5px);
+    }
+
+    80% {
+        transform: translateX(5px);
+    }
+}
+
+/* ========================================
+   GRANTED ANIMATION
+======================================== */
+
+.gt-04__target.fx-granted {
+    animation: gt-04-pulse 0.8s ease-out;
+}
+
+@keyframes gt-04-pulse {
+    0% {
+        text-shadow: 0 0 4px var(--main);
+    }
+
+    40% {
+        text-shadow:
+            0 0 25px var(--main),
+            0 0 60px rgba(var(--glow), 0.8);
+    }
+
+    100% {
+        text-shadow:
+            0 0 10px var(--main),
+            0 0 30px rgba(var(--glow), 0.4);
+    }
+}
+
+/* ========================================
+   BLINKING CURSOR
+======================================== */
+
+.gt-04__cursor {
+    display: inline-block;
+
+    width: 3px;
+    height: 0.85em;
+
+    background: var(--main);
+
+    margin-left: 3px;
+    vertical-align: middle;
+
+    animation: gt-04-blink 0.7s steps(1) infinite;
+}
+
+@keyframes gt-04-blink {
+    0%, 49% {
+        opacity: 1;
+    }
+
+    50%, 100% {
+        opacity: 0;
+    }
+}
+
+/* ========================================
+   STATUS TEXT
+======================================== */
+
+.gt-04__status {
+    font-size: 11px;
+    color: var(--mid);
+
+    opacity: 0.6;
+    letter-spacing: 2px;
+}
+
+/* ========================================
+   ACCESS SERVER BUTTON
+======================================== */
+
+.gt-04__server {
+    display: none;
+
+    margin-top: 14px;
+    width: 100%;
+
+    background: rgba(var(--glow), 0.1);
+
+    border: 1px solid var(--main);
+    border-radius: 3px;
+
+    color: var(--main);
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    padding: 14px 20px;
+
+    cursor: pointer;
+
+    text-shadow: 0 0 8px var(--main);
+
+    box-shadow: 0 0 15px rgba(var(--glow), 0.25);
+
+    transition:
+        background 0.2s,
+        box-shadow 0.2s,
+        color 0.2s;
+}
+
+.gt-04.is-granted .gt-04__server {
+    display: block;
+
+    animation:
+        gt-04-reveal 0.5s ease-out,
+        gt-04-glow 2s ease-in-out 0.5s infinite;
+}
+
+.gt-04__server:hover {
+    background: var(--main);
+    color: #000;
+
+    text-shadow: none;
+
+    box-shadow: 0 0 30px rgba(var(--glow), 0.7);
+}
+
+.gt-04__server:disabled {
+    cursor: default;
+    opacity: 0.7;
+    animation: none;
+}
+
+@keyframes gt-04-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gt-04-glow {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(var(--glow), 0.2);
+    }
+
+    50% {
+        box-shadow: 0 0 25px rgba(var(--glow), 0.6);
+    }
+}
+
+/* ========================================
+   REPLAY BUTTON
+======================================== */
+
+.gt-04__btn {
+    margin-top: 8px;
+    align-self: flex-start;
+
+    background: none;
+
+    border: 1px solid var(--dim);
+    border-radius: 2px;
+
+    color: var(--mid);
+
+    font-family: inherit;
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    padding: 8px 16px;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s,
+        color 0.2s,
+        box-shadow 0.2s;
+}
+
+.gt-04__btn:hover {
+    border-color: var(--main);
+    color: var(--main);
+
+    box-shadow: 0 0 10px rgba(var(--glow), 0.3);
+}
+
+/* ========================================
+   GRANTED THEME
+======================================== */
+
+.gt-04.is-granted {
+    --main: #00ff41;
+    --dim: #003b00;
+    --mid: #00aa29;
+    --glow: 0, 255, 65;
+    --bg: #010d01;
+}
+
+/* ========================================
+   DENIED THEME
+======================================== */
+
+.gt-04.is-denied {
+    --main: #ff1a1a;
+    --dim: #3b0000;
+    --mid: #aa0000;
+    --glow: 255, 26, 26;
+    --bg: #0d0101;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 768px) {
+
+    .gt-04 {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .header {
+        font-size: clamp(45px, 10vw, 75px);
+    }
+
+    .gt-04__terminal {
+        width: 100%;
+        max-width: 520px;
+
+        min-height: 170px;
+        padding: 28px 22px;
+    }
+
+    .gt-04__target {
+        font-size: clamp(26px, 6vw, 42px);
+        letter-spacing: 2px;
+    }
+
+    .gt-04__prompt,
+    .gt-04__status {
+        font-size: 10px;
+    }
+
+    .gt-04__status {
+        letter-spacing: 1px;
+    }
+
+    .gt-04__server {
+        font-size: 13px;
+        letter-spacing: 2px;
+    }
+}
+
+/* ========================================
+   SMARTPHONE
+======================================== */
+
+@media (max-width: 480px) {
+
+    .gt-04 {
+        width: 100%;
+        min-height: 100dvh;
+
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .header {
+        font-size: clamp(38px, 11vw, 52px);
+        letter-spacing: -2px;
+    }
+
+    .header span {
+        font-size: 14px;
+    }
+
+    .gt-04__terminal {
+        width: 100%;
+        max-width: 100%;
+
+        min-height: 155px;
+        padding: 24px 16px;
+        gap: 10px;
+    }
+
+    .gt-04__target {
+        font-size: clamp(23px, 7vw, 30px);
+        letter-spacing: 1px;
+    }
+
+    .gt-04__prompt {
+        font-size: 9px;
+        letter-spacing: 0.5px;
+    }
+
+    .gt-04__status {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .gt-04__server {
+        font-size: 11px;
+        letter-spacing: 2px;
+        padding: 13px 10px;
+    }
+
+    .gt-04__btn {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .gt-04__rain-col {
+        font-size: 10px;
+    }
+}
+
+/* ========================================
+   SMALL SCREEN HEIGHTS
+======================================== */
+
+@media (max-height: 500px) {
+
+    .gt-04 {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .gt-04__terminal {
+        min-height: auto;
+        padding: 18px 24px;
+    }
+
+    .gt-04__server {
+        margin-top: 6px;
+        padding: 9px 14px;
+    }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .gt-04__rain-col {
+        animation: none;
+    }
+
+    .gt-04__target.fx-denied,
+    .gt-04__target.fx-granted {
+        animation: none;
+    }
+
+    .gt-04.is-granted .gt-04__server {
+        animation: none;
+    }
+
+    .gt-04__cursor {
+        animation: none;
+        opacity: 1;
+    }
+}
